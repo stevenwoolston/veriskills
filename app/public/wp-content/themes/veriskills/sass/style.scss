@@ -1,0 +1,33 @@
+/*
+@package: wwd blankslate
+*/
+@import "node_modules/bootstrap/scss/bootstrap";
+//@import "vendor/_animate";
+//@import "vendor/_bootstrap-datetimepicker";
+@import "_variables";
+@import "_woocommerce";
+@import "_mixins";
+@import "_layout";
+@import "_core";
+@import "_carousel";
+@import "_header";
+@import "_sidebar";
+@import "_page";
+@import "_footer";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $body-font;
+    font-size: $base-font-size;
+    background: #eee;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $heading-font;
+}

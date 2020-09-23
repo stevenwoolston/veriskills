@@ -1,0 +1,21 @@
+/*
+@package: wwd blankslate
+*/
+$color1: #f2f1ef;
+$color2: #b1a6a4;
+$color3: #697184;
+$color4: #d8cfd0;
+$color5: #413f3d;
+$color6: rgb(102, 166, 181);
+$color6-darken: darken($color6, 20%);
+$color6-lighten: lighten($color6, 20%);
+
+$body-font: 'Open Sans', sans-serif;
+$body-fg-color: #222;
+$secondary-fg-color: #bf582f;
+$heading-font: 'Alegreya Sans SC', sans-serif;
+$heading-color: $color6;
+$base-font-size: 16px;
+$carousel-height: 60vh;
+$base-link-color: #333;
+$base-link-alt-color: #333;

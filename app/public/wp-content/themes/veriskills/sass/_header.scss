@@ -1,0 +1,29 @@
+header.page-header {
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+ul.navbar-nav {
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding: 1rem;
+
+        &.active {
+            background-color: #eee;
+        }
+
+        a {
+            color: #222;
+        
+            &:active, &:link, &:focus {
+                text-decoration: none;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }        
+        }
+    }
+}
