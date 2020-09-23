@@ -1,3 +1,16 @@
 .page-footer {
-    
+    padding: 10vh 3vw 3vh 3vh;
+    background-color: $color2;
+    color: #fff;
+
+    a {
+        color: #fff;
+        
+        &:active, &:link, &:focus {
+            text-decoration: underline;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }

@@ -2,8 +2,6 @@
 @package: wwd blankslate
 */
 @import "node_modules/bootstrap/scss/bootstrap";
-//@import "vendor/_animate";
-//@import "vendor/_bootstrap-datetimepicker";
 @import "_variables";
 @import "_woocommerce";
 @import "_mixins";
@@ -30,4 +28,70 @@ h2,
 h3,
 h4 {
     font-family: $heading-font;
+    color: $color3;
+
+    &.hero {
+        margin: 0;
+    }
+}
+
+.hero {
+    padding: 10vh 5vw;
+
+    &.has-media-on-the-right {
+        grid-template-columns: 1fr 40%;
+
+        figure {
+            padding: 20px;
+            
+            img {
+                height: 80%;
+                width: auto;
+            }
+        }
+    }
+}
+
+.bg-1 {
+    background-color: $color1;
+    color: #fff;
+}
+.bg-2 {
+    background-color: $color2;
+}
+.bg-3 {
+    background-color: $color3;
+    color: $color1;
+
+    h2, h3, h4, h5 {
+        color: $color1;
+        font-weight: 700;
+    }
+
+    &.darken {
+        @include bg-darken($color3, 20%);
+    }
+
+    &.lighten {
+        @include bg-lighten($color3, 10%);
+    }    
+
+    &.lightenx2 {
+        @include bg-lighten($color3, 20%);
+    }    
+
+    &.lightenx3 {
+        @include bg-lighten($color3, 30%);
+    }    
+}
+.bg-4 {
+    background-color: $color4;
+}
+.bg-5 {
+    background-color: $color5;
+}
+
+.skew-bottom {
+    padding-bottom: 10vh;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
 }

@@ -142,3 +142,8 @@ table.wwd-admin th, table.wwd-admin td {
     right: 100px;
     z-index: 2;
 }
+
+.wp-block {
+    border-collapse: collapse;
+    border: 1px solid #eee;
+}
