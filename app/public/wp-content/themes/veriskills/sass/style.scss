@@ -28,7 +28,7 @@ h2,
 h3,
 h4 {
     font-family: $heading-font;
-    color: $color3;
+    color: $color1;
 
     &.hero {
         margin: 0;
@@ -91,6 +91,25 @@ h4 {
     background-color: $color5;
 }
 
+.fg-1 {
+    color: $color1;
+}
+
+.fg-2 {
+    color: $color2;
+}
+
+.fg-3 {
+    color: $color3;
+}
+
+.fg-4 {
+    color: $color4;
+}
+
+.fg-5 {
+    color: $color5;
+}
 .skew-bottom {
     padding-bottom: 10vh;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);

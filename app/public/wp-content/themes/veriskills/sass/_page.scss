@@ -60,13 +60,27 @@
     }
 
     &.skew-top {
-        margin-top: -20vh;
-        margin-bottom: 0;
 
         .wp-block-column {
             padding-top: 40vh;
             padding-bottom: 10vh;
             margin: 0 !important;
+        }
+    }
+}
+
+.skew-top {
+    margin-top: -20vh;
+    margin-bottom: 0;
+}
+
+.wp-block-image {
+
+    &.w-100, &.w-75 {
+
+        img {
+            width: 100%;
+            height: auto;
         }
     }
 }
