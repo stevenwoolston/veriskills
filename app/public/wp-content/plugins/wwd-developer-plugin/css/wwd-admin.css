@@ -144,6 +144,7 @@ table.wwd-admin th, table.wwd-admin td {
 }
 
 .wp-block {
+    max-width: unset;
     border-collapse: collapse;
     border: 1px solid #eee;
 }
