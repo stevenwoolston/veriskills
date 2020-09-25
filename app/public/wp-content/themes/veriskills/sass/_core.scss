@@ -150,6 +150,131 @@ code {
         }
     }
 }
+
+
+.bg-1 {
+    background-color: $color1;
+    color: #fff;
+}
+.bg-2 {
+    background-color: $color2;
+}
+.bg-3 {
+    background-color: $color3;
+    color: $color1;
+
+    h2, h3, h4, h5 {
+        color: $color1;
+    }
+
+    &.darken {
+        @include bg-darken($color3, 20%);
+    }
+
+    &.lighten {
+        @include bg-lighten($color3, 10%);
+    }    
+
+    &.lightenx2 {
+        @include bg-lighten($color3, 20%);
+    }    
+
+    &.lightenx3 {
+        @include bg-lighten($color3, 30%);
+    }    
+}
+.bg-4 {
+    background-color: $color4;
+
+    &.darken {
+        @include bg-darken($color4, 20%);
+    }
+
+    &.lighten {
+        @include bg-lighten($color4, 10%);
+    }    
+
+    &.lightenx2 {
+        @include bg-lighten($color4, 20%);
+    }    
+
+    &.lightenx3 {
+        @include bg-lighten($color4, 30%);
+    }    
+}
+
+.bg-5 {
+    background-color: $color5;
+}
+
+.fg-white {
+    color: #fff !important;
+}
+
+.fg-1 {
+    color: $color1;
+}
+
+.fg-2 {
+    color: $color2;
+}
+
+.fg-3 {
+    color: $color3;
+}
+
+.fg-4 {
+    color: $color4;
+}
+
+.fg-5 {
+    color: $color5;
+}
+
+.hero-padding {
+    padding: 20vh 10vw 20vh 10vw;
+}
+
+.skew-top-bottom {
+    clip-path: polygon(0 15%, 100% 0, 100% 80%, 0% 95%);
+
+    & + :not(.skew-top-bottom) {
+        margin-top: -20vh;
+    }
+}
+
+.skew-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 95%);
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+
+    & + * {
+        margin-top: -20vh;
+    }
+
+    & + .skew-top-bottom {
+        margin-top: -15vh;
+    }
+}
+
+.skew-top-bottom {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.skew-bottom-spacing {
+    padding-top: 20vh;
+}
+
+figure, .wp-block-image {
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.btn a {
+    border-radius: 5px !important;
+}
+
 /* Breakpoints */
 // @include media-breakpoint-down(lg) { body { background-color: orange !important; } }
 // @include media-breakpoint-down(md) { body { background-color: pink !important; } }

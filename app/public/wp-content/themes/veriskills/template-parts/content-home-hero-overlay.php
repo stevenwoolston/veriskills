@@ -4,7 +4,7 @@
 */
 ?>
 
-<section class="home-service-hero-container d-flex skew-bottom">
+<section class="home-service-hero-container d-flex skew-bottom py-0">
 <?php
 	wp_reset_query();
 	query_posts(array( 
