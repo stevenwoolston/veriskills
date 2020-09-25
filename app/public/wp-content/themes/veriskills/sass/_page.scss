@@ -51,27 +51,16 @@
         overflow-wrap: normal;
     }
 
-    .no-spacing {
+    &.no-spacing {
 
+        .wp-block-column:not(:first-child) {
+            margin-left: 0;
+        }        
     }
 
     &.full-width {
         width: 100%;
     }
-
-    &.skew-top {
-
-        .wp-block-column {
-            padding-top: 40vh;
-            padding-bottom: 10vh;
-            margin: 0 !important;
-        }
-    }
-}
-
-.skew-top {
-    margin-top: -20vh;
-    margin-bottom: 0;
 }
 
 .wp-block-image {
@@ -181,7 +170,6 @@
 }
 .block-home-explanation {
     display: flex;
-    //justify-content: space-evenly;
 
     > * {
         display: flex;
@@ -207,6 +195,7 @@
 
     .wp-block-column {
         padding: 25vh 5% 5vh 5%;
+        justify-content: space-between;
 
         h3, h4, h5, h6 {
             font-weight: 700;
