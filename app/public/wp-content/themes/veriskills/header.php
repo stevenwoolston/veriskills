@@ -52,7 +52,6 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<main>
 <header class="page-header py-1">
     <div class="nav-wrap">
 <?php

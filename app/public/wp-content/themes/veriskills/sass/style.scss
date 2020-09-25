@@ -111,6 +111,9 @@ h4 {
     color: $color5;
 }
 .skew-bottom {
-    padding-bottom: 10vh;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+
+    & + section {
+        margin-top: -13vh;
+    }
 }

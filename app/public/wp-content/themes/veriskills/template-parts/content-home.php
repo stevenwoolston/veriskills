@@ -5,7 +5,7 @@
 ?>
 
 <section <?php post_class( array('wwd-content-page') ); ?>>
-	DEFAULT
+
 	<article id="page-<?php the_ID(); ?>" 
 		<?php post_class(array($post->post_name)); ?>>
 
