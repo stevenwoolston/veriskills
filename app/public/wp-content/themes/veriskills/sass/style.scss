@@ -15,14 +15,12 @@
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
     font-family: $body-font;
     font-size: $base-font-size;
-    background: #eee;
+    background: #fff;
 }
 
 h1,
@@ -113,14 +111,39 @@ h4 {
     color: $color5;
 }
 
-.skew-bottom {
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+.hero-padding {
+    padding: 20vh 10vw 20vh 10vw;
+}
 
-    & + section, & + div {
-        margin-top: -13vh;
+.skew-top-bottom {
+    clip-path: polygon(0 15%, 100% 0, 100% 80%, 0% 95%);
+
+    & + :not(.skew-top-bottom) {
+        margin-top: -20vh;
+    }
+}
+
+.skew-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 95%);
+
+    & + * {
+        margin-top: -20vh;
+    }
+
+    & + .skew-top-bottom {
+        margin-top: -15vh;
     }
 }
 
 .skew-bottom-spacing {
     padding-top: 20vh;
+}
+
+figure, .wp-block-image {
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.btn a {
+    border-radius: 5px !important;
 }
