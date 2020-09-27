@@ -26,11 +26,33 @@ add_action('wp_enqueue_scripts', 'wwd_load_scripts');
 
 function wwd_custom_post_types() {
     if (function_exists('wwd_generic_taxonomy')) {
-        wwd_generic_taxonomy('builder-component', 'Component Location', 'Component Locations', 'builder-component', array('layout'));
+        wwd_generic_taxonomy('builder_component', 'Component Location', 'Component Locations', 'builder-component', array('layout'));
+        wwd_generic_taxonomy('faq_category', 'FAQ Header', 'FAQ Headers', 'faq-category', array('faq'));
     }
 
     if (function_exists('wwd_add_custom_post')) {
         wwd_add_custom_post('layout', 'Layout Builder', 'Layout Builders', 'dashicons-book-alt', array('post'));
+        wwd_add_custom_post('faq', 'FAQ', 'FAQs', 'dashicons-book-alt', array('post'));
     }
 }
 add_action('init', 'wwd_custom_post_types');
+
+function wwd_search_filter($query) {
+
+    if (is_admin() || !$query->is_main_query()) { return $query; }
+
+    global $wp_post_types;
+    $wp_post_types['layout']->exclude_from_search = true;
+
+    $meta_query = [];
+
+    if ($query->is_archive && ($query->query['post_type'] == 'faq')) {
+        $query->set('order', 'ASC');
+        $query->set('orderby', 'menu_order');
+        $query->set('posts_per_page', -1);
+    }
+
+    $query->set('meta_query', $meta_query);
+    return $query;
+}
+add_action('pre_get_posts', 'wwd_search_filter');

@@ -13,6 +13,7 @@ a.wp-block-button__link {
     background-image: linear-gradient(230deg, $color1, $color1);
     background-blend-mode: luminosity;
     position: relative;
+    margin-bottom: 10vh;
 
     &:before {
         content: '';
@@ -286,6 +287,57 @@ a.wp-block-button__link {
                     padding-bottom: 10px;
                 }
             }
+        }
+    }
+}
+
+#faq_accordion {
+    .card {
+        margin-bottom: 10px;
+        border: none;
+        background-color: lighten($color3, 30%);
+        transition: 0.5s ease-in-out background-color;
+
+        &.open {
+            background-color: lighten($color3, 20%);
+
+            .la-plus-circle {
+                display: none !important;
+            }
+            .la-minus-circle {
+                display: inline !important;
+            }
+
+        }
+
+        .card-header {
+
+            h2, h3, h4, h5 {
+                margin: 0;
+
+                button {
+                    padding: 0;
+                    color: $color1;
+                    text-align: left;
+                    font-size: 0.7em;
+                    font-weight: 700;
+
+                    &:hover, &:visited, &:active {
+                        text-decoration: none;
+                    }
+
+                    .la-plus-circle {
+                        display: inline;
+                    }
+                    .la-minus-circle {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .card-body {
+            background-color: lighten($color3, 20%);
         }
     }
 }
