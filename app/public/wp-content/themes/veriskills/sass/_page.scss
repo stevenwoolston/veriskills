@@ -341,3 +341,47 @@ a.wp-block-button__link {
         }
     }
 }
+
+.page-ready-to-learn-more {
+    background-color: $color2;
+
+    div[role=form] {
+        padding: 10px;
+
+        form {
+
+            div {
+                padding: 10px 0;
+
+                &.contact-container {
+                    display: flex;
+                    justify-content: space-between;
+
+                    span {
+                        flex: 0 0 48%;
+                    }
+                }
+
+                &.btn-container {
+                    padding-right: 0;
+                    text-align: right;
+                    
+                    .ajax-loader {
+                        float: left;
+                    }
+
+                    input[type=submit] {
+                        padding: 10px 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    .page-footer {
+
+        .footer-headline, .footer-form-container {
+            display: none;
+        }
+    }
+}

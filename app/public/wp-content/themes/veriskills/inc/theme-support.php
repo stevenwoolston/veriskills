@@ -13,7 +13,7 @@ add_filter( 'widget_text', 'do_shortcode' );
 function tm_theme_add_editor_styles() {
     wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/css/style.min.css', false, '1.0.0' );
 }
-add_action('admin_enqueue_scripts', 'tm_theme_add_editor_styles');
+// add_action('admin_enqueue_scripts', 'tm_theme_add_editor_styles');
 
 function wwd_custom_logo_setup() {
     $defaults = array(
