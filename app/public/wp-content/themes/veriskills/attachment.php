@@ -11,10 +11,6 @@ $attachment = wp_get_attachment_image_src(get_the_ID(), 'full')[0];
 
 <section <?php post_class( array('wwd-content-page', 'container-fluid') ); ?>>
 	
-	<div class="page-hero-header text-center">
-		Together ... Making a Memory
-	</div>	
-
 	<article id="page-<?php the_ID(); ?>" class="container">
 
 		<div class="entry-header">

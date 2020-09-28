@@ -396,3 +396,11 @@ a.wp-block-button__link {
         }
     }
 }
+
+section.wwd-content-404 {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
