@@ -1,0 +1,59 @@
+.woocommerce {
+
+    input[type=text], input[type=number], input[type=tel], input[type=email], textarea, select {
+        @extend .form-control;
+    }
+
+    a.button, a.button.alt, a.button:hover, a.button.alt:hover, 
+    button, button.button.alt, button.alt, button:hover, button.button.alt:hover, button.alt:hover, 
+    [type=submit], [type=submit].alt, [type=submit]:hover, [type=submit].alt:hover {
+        @extend .btn;
+        @extend .btn-primary;
+        border-radius: 0;
+    }
+
+    .woocommerce-input-wrapper {
+        width: 100%;
+        display: block;
+
+        [role=combobox] {
+            display: block;
+            width: 100%;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;    
+            
+            > span[role=presentation] {
+                height: calc(1.5em + .75rem + 2px);
+            }
+        }
+    }
+}
+
+// added via theme support action - see inc/woocommerce-support.php
+ul li.woocommerce-cart-icon {
+    position: relative;
+    padding-top: 10px;
+
+    a {
+        position: relative;
+
+        span.badge {
+            position: absolute;
+            left: 6px;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.6);
+            color: var(--red);
+            font-weight: 700;
+            padding: 3px 7px;
+        }
+    }
+}

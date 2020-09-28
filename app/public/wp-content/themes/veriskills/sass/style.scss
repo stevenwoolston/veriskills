@@ -1,0 +1,63 @@
+/*
+@package: wwd blankslate
+*/
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "_variables";
+@import "_woocommerce";
+@import "_mixins";
+@import "_layout";
+@import "_core";
+@import "_carousel";
+@import "_header";
+@import "_sidebar";
+@import "_page";
+@import "_footer";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $body-font;
+    font-size: $base-font-size;
+    background: #fff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $heading-font;
+    color: $color1;
+
+    &.hero {
+        margin: 0;
+    }
+
+    &.no-link-underline {
+
+        a {
+            &:active, &:visited, &:link, &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.hero {
+    padding: 10vh 5vw;
+
+    &.has-media-on-the-right {
+        grid-template-columns: 1fr 40%;
+
+        figure {
+            padding: 20px;
+            text-align: center;
+
+            img {
+                height: 40vh !important;
+                width: auto;
+            }
+        }
+    }
+}

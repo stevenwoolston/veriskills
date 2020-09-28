@@ -1,0 +1,282 @@
+/*
+@package: wwd blankslate
+*/
+a {
+    color: $base-link-color;
+    
+    &:active, &:link, &:focus {
+        text-decoration: underline;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.bg-image-cover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+/*
+    Gallery Format
+    Supported by 'custom-carousel' media size
+*/
+.wwd-format-gallery {
+
+    .carousel {
+        height: 600px;
+   }
+}
+
+.wwd-hero {
+
+    &.wwd-hero-25 {
+        min-height: 25vh;
+    }
+
+    &.wwd-hero-50 {
+        min-height: 50vh;
+    }
+
+    &.wwd-hero-80 {
+        min-height: 80vh;
+    }
+
+    &.wwd-hero-100 {
+        min-height: 100vh;
+    }    
+}
+
+/*  Images  */
+img {
+
+    &.alignright {
+        float: right;
+        margin: 1vh auto 1vh 2vw;
+    }
+    &.alignleft {
+        float: left;
+        margin: 1vh 2vw 1vh auto;
+    }
+    &.aligncenter {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto;
+}
+
+.wp-caption {
+    margin: 40px auto;
+
+    a, img {
+        display: block;
+    }
+    > img {
+        width: 100%;
+        height: auto;
+    }
+
+    p.wp-caption-text {
+        background-color: $color3;
+        color: #fff;
+        padding: 10px;
+    }
+}
+/*  end Images  */
+
+code {
+    color: $color3;
+    padding: 2px 3px;
+    background-color: #ccc;
+    font-size: 1em;
+}
+
+.gallery-thumbnail-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .thumbnail-item {
+        width: 40%;
+        margin: 10px 10px;
+        padding: 10px;
+
+        @include media-breakpoint-down(sm) { 
+            width: 100%;
+        }
+
+        &:hover {
+            padding: 7px;
+
+            img {
+                box-shadow: 1px 13px 10px #161414;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        a {
+            display: block;
+
+            img {
+                box-shadow: none;
+            }
+        }
+
+        .text-overlay {
+            padding: 5px 10px;
+            font-family: $heading-font;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    }
+}
+
+.attachment {
+
+    article {
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+
+.bg-1 {
+    background-color: $color1;
+    color: #fff;
+}
+.bg-2 {
+    background-color: $color2;
+}
+.bg-3 {
+    background-color: $color3;
+    color: $color1;
+
+    h2, h3, h4, h5 {
+        color: $color1;
+    }
+
+    &.darken {
+        @include bg-darken($color3, 20%);
+    }
+
+    &.lighten {
+        @include bg-lighten($color3, 10%);
+    }    
+
+    &.lightenx2 {
+        @include bg-lighten($color3, 20%);
+    }    
+
+    &.lightenx3 {
+        @include bg-lighten($color3, 30%);
+    }    
+}
+.bg-4 {
+    background-color: $color4;
+
+    &.darken {
+        @include bg-darken($color4, 20%);
+    }
+
+    &.lighten {
+        @include bg-lighten($color4, 10%);
+    }    
+
+    &.lightenx2 {
+        @include bg-lighten($color4, 20%);
+    }    
+
+    &.lightenx3 {
+        @include bg-lighten($color4, 30%);
+    }    
+}
+
+.bg-5 {
+    background-color: $color5;
+}
+
+.fg-white {
+    color: #fff !important;
+}
+
+.fg-1 {
+    color: $color1;
+}
+
+.fg-2 {
+    color: $color2;
+}
+
+.fg-3 {
+    color: $color3;
+}
+
+.fg-4 {
+    color: $color4;
+}
+
+.fg-5 {
+    color: $color5;
+}
+
+.hero-padding {
+    padding: 20vh 10vw 20vh 10vw;
+}
+
+.skew-top-bottom {
+    clip-path: polygon(0 15%, 100% 0, 100% 80%, 0% 95%);
+
+    & + :not(.skew-top-bottom) {
+        margin-top: -20vh;
+    }
+}
+
+.skew-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 95%);
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+
+    & + * {
+        margin-top: -20vh;
+    }
+
+    & + .skew-top-bottom {
+        margin-top: -15vh;
+    }
+}
+
+.skew-top-bottom {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.skew-bottom-spacing {
+    padding-top: 20vh;
+}
+
+figure, .wp-block-image {
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.btn a {
+    border-radius: 5px !important;
+}
+
+/* Breakpoints */
+// @include media-breakpoint-down(lg) { body { background-color: orange !important; } }
+// @include media-breakpoint-down(md) { body { background-color: pink !important; } }
+// @include media-breakpoint-down(sm) { body { background-color: blue !important; } }
+// @include media-breakpoint-down(xs) { body { background-color: green !important; } }
