@@ -49,9 +49,8 @@ a.wp-block-button__link {
 }
 
 .wp-block-columns {
-    width: 60%;
-    margin: 0 auto;
-
+    margin-bottom: 0;
+    
     .wp-block-column {
         word-break: normal;
         overflow-wrap: normal;
@@ -66,6 +65,18 @@ a.wp-block-button__link {
 
     &.full-width {
         width: 100%;
+    }
+
+    &.thinking-personal-action {
+
+        figure {
+            text-align: center;
+
+            img {
+                height: 12vh;
+                width: auto;
+            }
+        }
     }
 }
 

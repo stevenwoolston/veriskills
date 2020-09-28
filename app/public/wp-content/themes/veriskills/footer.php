@@ -16,7 +16,7 @@
                 <?php echo '&copy;&nbsp;', date( 'Y' ).' ', esc_html( get_bloginfo( 'name' ) ); ?>
             </div>
             <div class="text-center">
-                Design by <a href="https://www.woolston.com.au" target="_blank">Woolston Web Design</a>
+                Design by <a href="https://www.focusedmarketing.com.au" target="_blank">Focused Marketing</a>
             </div>
         </div>
     </div>
