@@ -240,6 +240,10 @@ code {
 
     & + :not(.skew-top-bottom) {
         margin-top: -20vh;
+
+        @include media-breakpoint-down(xs) {
+            margin-top: -5vh;
+        }
     }
 }
 
@@ -254,6 +258,16 @@ code {
 
     & + .skew-top-bottom {
         margin-top: -15vh;
+
+        @include media-breakpoint-down(md) { margin-top: -20vh; }
+
+        @include media-breakpoint-down(xs) {
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
     }
 }
 

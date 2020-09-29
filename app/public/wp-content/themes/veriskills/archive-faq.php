@@ -18,26 +18,26 @@ get_header();
     $featured_image = get_field('featured_image', $header[0])['url'];
 ?>
     <section id="page-<?php the_ID(); ?>" 
-	<?php post_class(array('wwd-content-page', $post->post_name)); ?>>
+        <?php post_class(array('wwd-content-page', $post->post_name)); ?>>
 
-		<div class="entry-header skew-bottom"
+        <div class="entry-header skew-bottom"
             style="background-image: url(<?php echo $featured_image; ?>);
                 background-size: cover; background-position: center center;">
-			<h1 class="entry-title"><?php echo $header_name; ?></h1>
+            <h1 class="entry-title"><?php echo $header_name; ?></h1>
         </div>	
         
-        <div class="entry-body skew-bottom-spacing w-75 mb-5 mx-auto">
+        <div class="entry-body">
 <?php
     if (have_posts()):
 ?>
-            <div class="accordion" id="faq_accordion">
+            <div class="accordion w-75 mx-auto skew-bottom-spacing" id="faq_accordion">
 <?php
         while(have_posts()): the_post();
             $template = get_post_type() . (get_post_format() ? '-' . get_post_format() : '');
             get_template_part('template-parts/content', $template);
         endwhile;
 ?>
-           </div>
+            </div>
 <?php
     endif;
 ?>

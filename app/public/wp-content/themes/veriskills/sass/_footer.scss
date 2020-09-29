@@ -35,5 +35,13 @@
         .btn-container {
             flex: 0 0 50px;
         }
+
+        @include media-breakpoint-down(xs) {
+            flex-direction: column;
+
+            > * {
+                margin-bottom: 10px;
+            }
+        }        
     }
 }

@@ -10,7 +10,7 @@
             <button class="btn btn-link btn-block" type="button" data-toggle="collapse" 
                 data-target="#<?php echo 'faq' .get_the_ID(); ?>" aria-expanded="true" 
                 aria-controls="<?php echo 'faq' .get_the_ID(); ?>">
-                <?php the_title(); ?>
+                <span><?php the_title(); ?></span>
                 <i class="las la-plus-circle bg-1 rounded-circle float-right"></i>
                 <i class="las la-minus-circle bg-1 rounded-circle float-right"></i>
             </button>

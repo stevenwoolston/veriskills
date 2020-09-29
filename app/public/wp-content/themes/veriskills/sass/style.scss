@@ -61,6 +61,11 @@ h4 {
             img {
                 height: 40vh !important;
                 width: auto;
+
+                @include media-breakpoint-down(xs) {
+                    width: 50vw;
+                    height: auto !important;
+                }
             }
         }
     }
