@@ -6,20 +6,27 @@ header.page-header {
     align-items: center;
     
     .nav-wrap {
-        display: flex;
         width: 90%;
     }
 
-    .custom-logo {
-        display: flex;
-        align-items: center;
+    a.custom-logo-link {
+        display: block;
 
-        a {
-            display: block;
+        img {
+            height: 50px;
+            width: auto;
+        }
+    }
 
-            img {
-                height: 50px;
-                width: auto;
+    .navbar-toggler {
+        outline: 0;
+
+        .navbar-toggler-icon {
+
+            .las {
+                font-size: 1.3em;
+                // hamburger
+                &:before{content:"\f0c9"; }
             }
         }
     }
@@ -29,12 +36,17 @@ ul.navbar-nav {
     padding: 0;
     margin: 0;
 
+    @include media-breakpoint-down(md) { padding: 10px 0 0; }
+
     li {
         padding: 1rem;
         font-weight: 700;
 
+        @include media-breakpoint-down(md) { padding: 10px 0; }
+
         a {
             color: $color1;
+            @include media-breakpoint-down(md) { padding: 0; }
         
             &:active, &:link, &:focus {
                 text-decoration: none;

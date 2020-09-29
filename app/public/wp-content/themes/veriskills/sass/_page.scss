@@ -50,10 +50,14 @@ a.wp-block-button__link {
 
 .wp-block-columns {
     margin-bottom: 0;
-    
+    @include media-breakpoint-down(md) { flex-wrap: nowrap; }
+
     .wp-block-column {
         word-break: normal;
         overflow-wrap: normal;
+
+        @include media-breakpoint-down(md) { flex-wrap: nowrap; }
+
     }
 
     &.no-spacing {
