@@ -3,6 +3,12 @@
     background-color: $color2;
     color: #fff;
 
+    @include media-breakpoint-down(xs) {
+        .w-75 {
+            width: 90% !important;
+        }
+    }
+
     a {
         color: #fff;
         
@@ -35,5 +41,13 @@
         .btn-container {
             flex: 0 0 50px;
         }
+
+        @include media-breakpoint-down(xs) {
+            flex-direction: column;
+
+            > * {
+                margin-bottom: 10px;
+            }
+        }        
     }
 }

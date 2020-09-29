@@ -240,6 +240,10 @@ code {
 
     & + :not(.skew-top-bottom) {
         margin-top: -20vh;
+
+        @include media-breakpoint-down(xs) {
+            margin-top: -5vh;
+        }
     }
 }
 
@@ -254,6 +258,16 @@ code {
 
     & + .skew-top-bottom {
         margin-top: -15vh;
+
+        @include media-breakpoint-down(md) { margin-top: -20vh; }
+
+        @include media-breakpoint-down(xs) {
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
     }
 }
 
@@ -276,7 +290,7 @@ figure, .wp-block-image {
 }
 
 /* Breakpoints */
-// @include media-breakpoint-down(lg) { body { background-color: orange !important; } }
-// @include media-breakpoint-down(md) { body { background-color: pink !important; } }
-// @include media-breakpoint-down(sm) { body { background-color: blue !important; } }
-// @include media-breakpoint-down(xs) { body { background-color: green !important; } }
+// @include media-breakpoint-down(lg) { .page-header { background-color: orange !important; } }
+// @include media-breakpoint-down(md) { .page-header { background-color: pink !important; } }
+// @include media-breakpoint-down(sm) { .page-header { background-color: blue !important; } }
+// @include media-breakpoint-down(xs) { .page-header { background-color: green !important; } }
