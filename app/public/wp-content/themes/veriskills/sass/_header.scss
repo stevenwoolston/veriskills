@@ -7,6 +7,14 @@ header.page-header {
     
     .nav-wrap {
         width: 90%;
+
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+        }
+
+        .navbar {
+            @include media-breakpoint-down(lg) { padding: 10px; }
+        }
     }
 
     a.custom-logo-link {
@@ -43,10 +51,12 @@ ul.navbar-nav {
         font-weight: 700;
 
         @include media-breakpoint-down(md) { padding: 10px 0; }
+        @include media-breakpoint-down(lg) { padding: 10px; }
 
         a {
             color: $color1;
             @include media-breakpoint-down(md) { padding: 0; }
+            @include media-breakpoint-down(lg) { font-size: 0.8em; }
         
             &:active, &:link, &:focus {
                 text-decoration: none;
@@ -62,7 +72,7 @@ ul.navbar-nav {
 
             a {
                 color: $color3;
-            
+
                 &:active, &:link, &:focus {
                     text-decoration: none;
                 }

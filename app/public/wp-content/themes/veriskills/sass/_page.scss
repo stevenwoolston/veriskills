@@ -47,7 +47,7 @@ a.wp-block-button__link {
 
 .entry-body {
 
-    @include media-breakpoint-down(md) { 
+    @include media-breakpoint-down(lg) { 
         > .w-75 {
             width: 90% !important;
         }
@@ -125,6 +125,10 @@ a.wp-block-button__link {
 
 .home-service-hero-container {
 
+    @include media-breakpoint-down(xs) {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 95%);
+    }
+
     article {
         display: flex;
         flex-direction: column;
@@ -140,6 +144,10 @@ a.wp-block-button__link {
             height: 100%;
             overflow-x: hidden;
 
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+    
             img {
                 height: auto;
                 width: 100%;
@@ -152,8 +160,17 @@ a.wp-block-button__link {
             align-self: stretch;
             padding: 0;
 
+            @include media-breakpoint-down(md) {
+                justify-content: stretch;
+            }
+
             & > * {
                 flex: 0 0 50%;
+
+                @include media-breakpoint-down(md) {
+                    flex: 0 0 auto;
+                }
+    
             }
         }
 
@@ -167,11 +184,27 @@ a.wp-block-button__link {
                 justify-content: center;
                 padding: 20px 50px 0 50px;
 
+                @include media-breakpoint-down(xs) { padding: 20px 20px 0 20px; }
+
                 h1, h2, h3, h4, h5 {
                     font-weight: 700;
                     margin-bottom: 20px;
                 }
 
+                h1 {
+                    @include media-breakpoint-down(xs) { font-size: 1.5em; }
+                    @include media-breakpoint-down(lg) { font-size: 1.2em; }
+                }
+
+                h3 {
+                    @include media-breakpoint-down(xs) { font-size: 1.3em; }
+                    @include media-breakpoint-down(lg) { font-size: 1.1em; }
+                }
+
+                h4 {
+                    @include media-breakpoint-down(xs) { font-size: 1.1em; }
+                    @include media-breakpoint-down(lg) { font-size: 0.9em; }
+                }                
                 a.wp-block-button__link {
                     background-color: $color3;
                     color: #fff;
@@ -188,16 +221,45 @@ a.wp-block-button__link {
                 align-items: stretch;
             }
 
+            .wp-block-columns {
+
+                @include media-breakpoint-down(md) {
+                    display: flex;                
+                    flex-direction: row;
+                }
+            }
             .wp-block-column {
                 padding: 15% 7% 0 7%;
 
+                @include media-breakpoint-down(md) {
+                    padding-bottom: 20vh;
+                    flex-grow: 1;
+                }
+
+                @include media-breakpoint-down(xs) { 
+                    padding-bottom: 60px; 
+
+                    &:nth-child(2) {
+                        padding-bottom: 15vh;
+                    }                
+                }
+
+                @include media-breakpoint-down(lg) {
+                    padding-top: 30px;
+                }
+                
                 h3, h4, h5, h6 {
                     margin-bottom: 20px;
                     color: #fff;
                 }
 
+                h4 {
+                    @include media-breakpoint-down(lg) { font-size: 1em; }
+                }
+
                 p {
                     color: #fff;
+                    @include media-breakpoint-down(lg) { font-size: 0.8em; }
                 }
 
                 &:not(:first-child) {
@@ -245,6 +307,17 @@ a.wp-block-button__link {
         padding: 25vh 5% 5vh 5%;
         justify-content: space-between;
 
+        @include media-breakpoint-down(lg) { padding-left: 10px; padding-right: 10px; }
+
+        @include media-breakpoint-down(xs) { 
+            padding-top: 30px; 
+            padding-bottom: 30px;
+
+            &:nth-child(1) {
+                padding-top: 20vh;
+            }
+        }
+
         h3, h4, h5, h6 {
             font-weight: 700;
         }
@@ -262,6 +335,8 @@ a.wp-block-button__link {
                 background-color: $color2;
                 color: #fff;
                 font-size: 0.9em;
+
+                @include media-breakpoint-down(md) { font-size: 0.9em; }
             }
         }
     }
@@ -308,6 +383,7 @@ a.wp-block-button__link {
 
     .wp-block-group.column-heading {
         padding: 20px;
+        min-height: 130px;
 
         .wp-block-group__inner-container {
             display: flex;
@@ -439,6 +515,10 @@ a.wp-block-button__link {
                 &.contact-container {
                     display: flex;
                     justify-content: space-between;
+
+                    @include media-breakpoint-down(md) {
+                        flex-direction: column;
+                    }
 
                     span {
                         flex: 0 0 48%;
