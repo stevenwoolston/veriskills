@@ -6,7 +6,9 @@
 <footer class="page-footer">
     <div class="w-75 mx-auto">
         <div class="footer-headline">
-            <h3>Be recognised.</h3>
+<?php
+    echo is_front_page() ? '<h3>Are you ready to be recognised?</h3>' : '<h3>Be recognised.</h3>';
+?>
             <div class="contact-container">
                 <div>
                     <i class="las la-phone"></i>
@@ -19,7 +21,10 @@
             </div>
         </div>
         <div class="text-center fade-white-bg footer-form-container">
-            <?php echo do_shortcode('[contact-form-7 id="36" title="Footer Form"]'); ?>
+<?php 
+    echo is_front_page() ? do_shortcode('[contact-form-7 id="223" title="Contact Us"]') : 
+        do_shortcode('[contact-form-7 id="36" title="Footer Form"]'); 
+?>
         </div>
         <div class="footer-references">
             <div class="text-center">
