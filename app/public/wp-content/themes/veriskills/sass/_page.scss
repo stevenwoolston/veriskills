@@ -178,13 +178,13 @@ a.wp-block-button__link {
             display: flex;
             align-items: stretch;
 
-            .wp-block-group__inner-container {
+            > .wp-block-group__inner-container {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                padding: 20px 50px 0 50px;
+                justify-content: space-around;
+                padding: 20px 50px;
 
-                @include media-breakpoint-down(xs) { padding: 20px 20px 0 20px; }
+                @include media-breakpoint-down(md) { padding: 40px 20px 30px 30px; }
 
                 h1, h2, h3, h4, h5 {
                     font-weight: 700;
