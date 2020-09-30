@@ -27,6 +27,18 @@
             color: #fff;
             font-weight: 700;
         }
+
+        .contact-container {
+
+            > div {
+                padding: 10px 0 0;
+            }
+
+            i {
+                font-size: 1.3em;
+                margin-right: 10px;
+            }
+        }
     }
 
     form.wpcf7-form {
