@@ -178,13 +178,13 @@ a.wp-block-button__link {
             display: flex;
             align-items: stretch;
 
-            .wp-block-group__inner-container {
+            > .wp-block-group__inner-container {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                padding: 20px 50px 0 50px;
+                justify-content: space-around;
+                padding: 20px 50px;
 
-                @include media-breakpoint-down(xs) { padding: 20px 20px 0 20px; }
+                @include media-breakpoint-down(md) { padding: 40px 20px 30px 30px; }
 
                 h1, h2, h3, h4, h5 {
                     font-weight: 700;
@@ -503,43 +503,6 @@ a.wp-block-button__link {
 
 .page-ready-to-learn-more {
     background-color: $color2;
-
-    div[role=form] {
-        padding: 10px;
-
-        form {
-
-            div {
-                padding: 10px 0;
-
-                &.contact-container {
-                    display: flex;
-                    justify-content: space-between;
-
-                    @include media-breakpoint-down(md) {
-                        flex-direction: column;
-                    }
-
-                    span {
-                        flex: 0 0 48%;
-                    }
-                }
-
-                &.btn-container {
-                    padding-right: 0;
-                    text-align: right;
-                    
-                    .ajax-loader {
-                        float: left;
-                    }
-
-                    input[type=submit] {
-                        padding: 10px 40px;
-                    }
-                }
-            }
-        }
-    }
 
     .page-footer {
 

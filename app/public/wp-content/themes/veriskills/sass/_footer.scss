@@ -27,6 +27,18 @@
             color: #fff;
             font-weight: 700;
         }
+
+        .contact-container {
+
+            > div {
+                padding: 10px 0 0;
+            }
+
+            i {
+                font-size: 1.3em;
+                margin-right: 10px;
+            }
+        }
     }
 
     form.wpcf7-form {
@@ -49,5 +61,47 @@
                 margin-bottom: 10px;
             }
         }        
+    }
+}
+
+.page-ready-to-learn-more, .home .footer-form-container {
+
+    div[role=form] {
+        padding: 10px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+    
+            div {
+                padding: 10px 0;
+
+                &.contact-container {
+                    display: flex;
+                    justify-content: space-between;
+
+                    @include media-breakpoint-down(md) {
+                        flex-direction: column;
+                    }
+
+                    span {
+                        flex: 0 0 48%;
+                    }
+                }
+
+                &.btn-container {
+                    padding-right: 0;
+                    text-align: right;
+                    
+                    .ajax-loader {
+                        float: left;
+                    }
+
+                    input[type=submit] {
+                        padding: 10px 40px;
+                    }
+                }
+            }
+        }
     }
 }
