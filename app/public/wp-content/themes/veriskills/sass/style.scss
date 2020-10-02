@@ -70,3 +70,11 @@ h4 {
         }
     }
 }
+
+/*  Contact form response */
+.wpcf7 form.sent .wpcf7-response-output {
+    background-color: #46b450;
+    padding: 10px;
+    border: 1px solid #fff;
+    color: rgba(255, 255, 255, 0.8);
+}
