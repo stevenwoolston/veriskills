@@ -57,4 +57,4 @@ function wwd_wp_title( $title, $sep ) {
         return $title;
     }
 }
-add_filter( 'wp_title', 'wwd_wp_title', 10, 2 );
+// add_filter( 'wp_title', 'wwd_wp_title', 10, 2 );
