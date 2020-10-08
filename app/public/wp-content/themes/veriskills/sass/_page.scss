@@ -10,8 +10,8 @@ a.wp-block-button__link {
     height: 50vh;
     width: 100%;
     background-color: $color1;
-    background-image: linear-gradient(230deg, $color1, $color1);
-    background-blend-mode: luminosity;
+    // background-image: linear-gradient(230deg, $color1, $color1);
+    // background-blend-mode: luminosity;
     position: relative;
     margin-bottom: 10vh;
 
@@ -526,4 +526,15 @@ section.wwd-content-404 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+figure.hero-image-fixed-height {
+    display: block !important;
+    width: 100%;
+    height: 70vh;
+    overflow-y: hidden;
+}
+
+.home section.wwd-content-page {
+    margin-top: -25vh;
 }
