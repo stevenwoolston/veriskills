@@ -238,6 +238,10 @@ code {
 .skew-top-bottom {
     clip-path: polygon(0 15%, 100% 0, 100% 80%, 0% 95%);
 
+    @include media-breakpoint-down(sm) {
+        clip-path: polygon(0 10%, 100% 0, 100% 85%, 0% 95%);
+    }
+
     & + :not(.skew-top-bottom) {
         margin-top: -20vh;
 
