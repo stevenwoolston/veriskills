@@ -105,3 +105,12 @@
         }
     }
 }
+
+.social-icon {
+    fill: #fff;
+    margin-right: 10px;
+
+    + .screen-reader-text {
+        display: none;
+    }
+}

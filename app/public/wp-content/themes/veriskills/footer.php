@@ -28,6 +28,9 @@
         </div>
         <div class="footer-references">
             <div class="text-center">
+                <?php echo do_shortcode('[social_links]');   ?>
+            </div>
+            <div class="text-center">
                 <span class="mr-2"><?php echo '&copy;&nbsp;', date( 'Y' ).' ', esc_html( get_bloginfo( 'name' ) ); ?></span>
                 |
                 <a class="ml-2" href='<?php echo get_site_url() ."/privacy-policy"; ?>'>Privacy Policy</a>
