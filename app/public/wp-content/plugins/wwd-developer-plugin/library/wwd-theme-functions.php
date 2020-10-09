@@ -146,7 +146,7 @@ function ea_social_links() {
 			$url = $settings['prepend'] . $url;
 
 		if( $url && !empty( $settings['icon'] ) )
-			$output[] = '<a href="' . esc_url_raw( $url ) . '">' . $settings['icon'] . '<span class="screen-reader-text">' . $social . '</span></a>';
+			$output[] = '<a target="_blank" href="' . esc_url_raw( $url ) . '">' . $settings['icon'] . '<span class="screen-reader-text">' . $social . '</span></a>';
 	}
 
 	if( !empty( $output ) )
