@@ -15,20 +15,20 @@ a.wp-block-button__link {
     position: relative;
     margin-bottom: 10vh;
 
-    &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background: transparentize(#000, 0.5);
-    }
+    // &:before {
+    //     content: '';
+    //     display: block;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     height: 100%;
+    //     width: 100%;
+    //     background: transparentize(#000, 0.5);
+    // }
 
-    > * { 
-        z-index: 1;
-    }
+    // > * { 
+    //     z-index: 1;
+    // }
 
     @include media-breakpoint-down(xs) { 
         padding: 30px;
