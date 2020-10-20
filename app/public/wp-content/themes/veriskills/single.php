@@ -1,44 +1,41 @@
 <?php
 /*
-Template Name: Archives
+Template Name: Single Post
 @package: wwd blankslate
 */
 get_header();
 $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')[0];
 ?>
 <main id="main" class="site-main" role="main">
-<?php
-    $header = get_terms('category', array(
-        'hide_empty' => false,
-        'childless' => true
-    ));
-    $header_name = $header[0]->name;
-    $featured_image = get_field('featured_image', $header[0])['url'];
-?>
     <section id="page-<?php the_ID(); ?>" 
         <?php post_class(array('wwd-content-page', $post->post_name)); ?>>
 
         <div class="entry-header skew-bottom"
             style="background-image: url(<?php echo $featured_image; ?>);
                 background-size: cover; background-position: center center;">
-            <h1 class="entry-title"><?php echo $header_name; ?></h1>
+            <h1 class="entry-title"><?php the_title(); ?></h1>
         </div>	
 
         <div class="entry-body mx-auto skew-bottom-spacing">
-            <div class="article-roll">
+        <div class="article-roll">
 <?php
     if (have_posts()):
         while(have_posts()): the_post();
-            $template = get_post_type() . (get_post_format() ? '-' . get_post_format() : '');
-            // var_dump('template is ' .$template);
-            get_template_part('template-parts/content', $template);
-        endwhile;
 ?>
-<div class="pagination-controls">
-    <div class="float-left"><?php previous_posts_link( '&laquo; Newer Entries' ); ?></div>
-    <div class="float-right"><?php next_posts_link( 'Older Entries &raquo;' ); ?></div>
-</div>
+	<article id="page-<?php the_ID(); ?>" 
+		<?php post_class(array($post->post_name)); ?>>
+
+		<div class="entry-body">
+            <div class="post-meta"><?php echo date("F d, Y", strtotime($post->post_date)); ?></div>
+            <div class="article-excerpt">
+    			<?php the_content(); ?>
+            </div>
+		</div>
+
+	</article>
+
 <?php
+        endwhile;
     endif;
 ?>
             </div>

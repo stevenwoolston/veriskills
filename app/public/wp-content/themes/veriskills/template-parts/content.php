@@ -10,9 +10,11 @@ $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')
 
 		<div class="entry-body">
             <img src="<?php echo $featured_image; ?>" alt="">
-            <h4><?php the_title(); ?></h4>
-            <div class="post-meta"><?php echo date("M d, Y", strtotime($post->post_date)); ?></div>
-			<?php the_excerpt(); ?>
+            <h4><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h4>
+            <div class="post-meta"><?php echo date("F d, Y", strtotime($post->post_date)); ?></div>
+            <div class="article-excerpt">
+    			<?php the_excerpt(); ?>
+            </div>
 		</div>
 
 	</article>
