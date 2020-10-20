@@ -39,10 +39,21 @@ function wwd_search_filter($query) {
 
     $meta_query = [];
 
-    if ($query->is_archive && ($query->query['post_type'] == 'faq')) {
-        $query->set('order', 'ASC');
-        $query->set('orderby', 'menu_order');
-        $query->set('posts_per_page', -1);
+    if ($query->is_archive) {
+        // var_dump($query);
+
+        if (isset($query->query['post_type']) && $query->query['post_type'] == 'faq') {
+                $query->set('order', 'ASC');
+                $query->set('orderby', 'menu_order');
+                $query->set('posts_per_page', -1);
+        }
+
+        if (isset($query->query['is_category']) && $query->query['is_category'] == 'news-insights') {
+            $query->set('order', 'DESC');
+            $query->set('orderby', 'post_date');
+            $query->set('posts_per_page', 4);
+        }
+
     }
 
     $query->set('meta_query', $meta_query);
