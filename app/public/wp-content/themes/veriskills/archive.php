@@ -5,6 +5,26 @@ Template Name: Archives
 */
 get_header();
 $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')[0];
+$categories = get_categories(array(
+    'orderby' => 'name',
+    'order' => 'ASC'
+));
+$query = new WP_Query(array(
+    'post_type' => 'post',
+    'orderby' => 'posted_date',
+    'order' => 'ASC',
+    'post_status' => 'published',
+    'fields' => 'posted_date'
+));
+$months = array();
+if ($query->have_posts()): while($query->have_posts()): $query->the_post();
+    $post_date = date("Y F", strtotime($post->post_date));
+    if (!in_array($post_date, $months)) {
+        $months[] = $post_date;
+    }
+endwhile; endif;
+// var_dump(array_unique($months));
+//var_dump(date("Y-M-d", strtotime($months[0])));
 ?>
 <main id="main" class="site-main" role="main">
 <?php
@@ -25,7 +45,33 @@ $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')
         </div>	
 
         <div class="entry-body mx-auto skew-bottom-spacing">
-            <div class="article-roll">
+            <form method="get" class="archive-search-filters">
+                <div class="blog-filters">
+                    <h3>Refine</h3>
+                    <div class="filter-item">
+                        <select class="form-control" name="filter_category" id="filter-category">
+                            <option value="">Category</option>
+<?php
+    foreach($categories as $category):
+        echo '<option value="' .$category->term_id. '">' .$category->name. '</option>';
+    endforeach;
+?>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select class="form-control" name="filter_category" id="filter-category">
+                            <option value="">Date</option>
+<?php
+    foreach($months as $month):
+        echo '<option value="' .$month. '">' .$month. '</option>';
+    endforeach;
+?>
+                        </select>
+                    </div>
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+            <div class="blog-roll">
 <?php
     if (have_posts()):
         while(have_posts()): the_post();
@@ -34,26 +80,16 @@ $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')
             get_template_part('template-parts/content', $template);
         endwhile;
 ?>
-<div class="pagination-controls">
-    <div class="float-left"><?php previous_posts_link( '&laquo; Newer Entries' ); ?></div>
-    <div class="float-right"><?php next_posts_link( 'Older Entries &raquo;' ); ?></div>
-</div>
+            </div>
+<?php   if (is_paged()):    ?>
+            <div class="pagination-controls">
+                <div class="float-left"><?php previous_posts_link( '&laquo; Newer Entries' ); ?></div>
+                <div class="float-right"><?php next_posts_link( 'Older Entries &raquo;' ); ?></div>
+            </div>
 <?php
+        endif;
     endif;
 ?>
-            </div>
-            <div class="sidebar">
-                <div class="sidebar-form">
-                    <h3 class="text-center mb-3">Subscribe to our latest updates</h3>
-                    <form action="#">
-                        <input type="text" class="mt-2" placeholder="Email">
-                        <button class="btn btn-success btn-block mt-2">Subscribe</button>
-                    </form>
-                    <div class="social text-center mt-5">
-                        <?php echo do_shortcode('[social_links]');   ?>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 </main>

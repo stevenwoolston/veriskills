@@ -51,7 +51,7 @@ function wwd_search_filter($query) {
         if ($query->is_category && $query->query['category_name'] == 'news-insights') {
             $query->set('order', 'DESC');
             $query->set('orderby', 'post_date');
-            $query->set('posts_per_page', 4);
+            $query->set('posts_per_page', 6);
         }
 
     }
