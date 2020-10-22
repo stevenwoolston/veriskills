@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
+		<loc>https://veriskills.local/news/</loc>
+		<lastmod>2020-10-22</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://veriskills.local/nunc-volutpat-venenatis-12/</loc>
+		<lastmod>2020-10-22</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://veriskills.local/nunc-volutpat-venenatis-11/</loc>
+		<lastmod>2020-10-22</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://veriskills.local/nunc-volutpat-venenatis-10/</loc>
+		<lastmod>2020-10-22</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://veriskills.local/nunc-volutpat-venenatis-9/</loc>
+		<lastmod>2020-10-22</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://veriskills.local/nunc-volutpat-venenatis-8/</loc>
+		<lastmod>2020-10-22</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>https://veriskills.local/nunc-volutpat-venenatis-7/</loc>
+		<lastmod>2020-10-22</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
 		<loc>https://veriskills.local/nunc-volutpat-venenatis-6/</loc>
 		<lastmod>2020-10-20</lastmod>
 		<changefreq>monthly</changefreq>
@@ -27,11 +62,6 @@
 	</url>
 	<url>
 		<loc>https://veriskills.local/nunc-volutpat-venenatis-2/</loc>
-		<lastmod>2020-10-20</lastmod>
-		<changefreq>monthly</changefreq>
-	</url>
-	<url>
-		<loc>https://veriskills.local/news-insights/</loc>
 		<lastmod>2020-10-20</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
