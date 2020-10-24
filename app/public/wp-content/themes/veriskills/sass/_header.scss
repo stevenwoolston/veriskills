@@ -47,11 +47,10 @@ ul.navbar-nav {
     @include media-breakpoint-down(md) { padding: 10px 0 0; }
 
     li {
-        padding: 1rem;
+        padding: 10px 10px 10px 0;
         font-weight: 700;
 
         @include media-breakpoint-down(md) { padding: 10px 0; }
-        @include media-breakpoint-down(lg) { padding: 10px; }
 
         a {
             color: $color1;

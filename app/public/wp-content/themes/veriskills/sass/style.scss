@@ -78,3 +78,17 @@ h4 {
     border: 1px solid #fff;
     color: rgba(255, 255, 255, 0.8);
 }
+
+.wp-block-embed.is-type-video .wp-block-embed__wrapper {
+    text-align: center;
+
+    iframe {
+        width: 65%;
+        height: 50vh;
+        
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+        }
+
+    }
+}

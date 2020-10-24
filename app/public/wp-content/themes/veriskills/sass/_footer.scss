@@ -64,6 +64,15 @@
     }
 }
 
+.footer-form-container {
+    width: 75%;
+    margin: 0 auto;
+
+    @include media-breakpoint-down(lg) {
+        width: 100%;
+    }
+}
+
 .page-ready-to-learn-more, .home .footer-form-container {
 
     div[role=form] {

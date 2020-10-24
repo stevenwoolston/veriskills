@@ -12,6 +12,7 @@ function wwd_load_scripts() {
     wp_enqueue_style('icon-fonts', get_template_directory_uri() . '/css/line-awesome.min.css', array(), '1.0.0', 'all');
     wp_enqueue_style('wwd-core-css', get_template_directory_uri() . '/css/style.min.css', array(), '1.0.2', 'all');
 
+    wp_enqueue_script('fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array('jquery'), '1.0', true);
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.5.0', true);
     wp_enqueue_script('wwd-core-js', get_template_directory_uri() . '/js/core.min.js', array('jquery'), '1.0.2', true);
 }

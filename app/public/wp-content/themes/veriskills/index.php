@@ -10,9 +10,10 @@ get_header();
             if (is_front_page()):
                 get_template_part('template-parts/content-home-hero-overlay');
                 get_template_part('template-parts/content', 'home');
+                get_template_part('template-parts/content', 'home-news');
             else:
                 $template = get_post_type() . (get_post_format() ? '-' . get_post_format() : '');
-                var_dump($template);
+                // var_dump($template);
                 get_template_part('template-parts/content', $template);
             endif;
 
