@@ -294,7 +294,7 @@ figure, .wp-block-image {
 }
 
 /* Breakpoints */
-@include media-breakpoint-down(lg) { .page-header { background-color: orange !important; } }
-@include media-breakpoint-down(md) { .page-header { background-color: pink !important; } }
-@include media-breakpoint-down(sm) { .page-header { background-color: blue !important; } }
-@include media-breakpoint-down(xs) { .page-header { background-color: green !important; } }
+// @include media-breakpoint-down(lg) { .page-header { background-color: orange !important; } }
+// @include media-breakpoint-down(md) { .page-header { background-color: pink !important; } }
+// @include media-breakpoint-down(sm) { .page-header { background-color: blue !important; } }
+// @include media-breakpoint-down(xs) { .page-header { background-color: green !important; } }
