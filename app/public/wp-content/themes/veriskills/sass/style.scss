@@ -1,0 +1,94 @@
+/*
+@package: wwd blankslate
+*/
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "_variables";
+@import "_mixins";
+@import "_core";
+@import "_header";
+@import "_page";
+@import "_footer";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $body-font;
+    font-size: $base-font-size;
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    main {
+        flex-grow: 1;
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $heading-font;
+    color: $color1;
+
+    &.hero {
+        margin: 0;
+    }
+
+    &.no-link-underline {
+
+        a {
+            &:active, &:visited, &:link, &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.hero {
+    padding: 10vh 5vw;
+
+    &.has-media-on-the-right {
+        grid-template-columns: 1fr 40%;
+
+        figure {
+            padding: 20px;
+            text-align: center;
+
+            img {
+                height: 40vh !important;
+                width: auto;
+
+                @include media-breakpoint-down(xs) {
+                    width: 50vw;
+                    height: auto !important;
+                }
+            }
+        }
+    }
+}
+
+/*  Contact form response */
+.wpcf7 form.sent .wpcf7-response-output {
+    background-color: #46b450;
+    padding: 10px;
+    border: 1px solid #fff;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.wp-block-embed.is-type-video .wp-block-embed__wrapper {
+    text-align: center;
+
+    iframe {
+        width: 65%;
+        height: 50vh;
+        
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+        }
+
+    }
+}
