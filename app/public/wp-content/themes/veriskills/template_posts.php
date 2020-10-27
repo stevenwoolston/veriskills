@@ -26,7 +26,8 @@ if ($all_posts->have_posts()): while($all_posts->have_posts()): $all_posts->the_
     }
 endwhile; endif;
 $unique_months = array_unique($months);
-$selected_month = isset($_GET['month']) ? $_GET['month'][0] : date("Y-F", strtotime(date("Y-F")));
+//$selected_month = isset($_GET['month']) ? $_GET['month'][0] : date("Y-F", strtotime(date("Y-F")));
+$selected_month = $_GET['month'];
 // var_dump($selected_month);
 wp_reset_postdata();
 $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')[0];
@@ -52,9 +53,10 @@ $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')
                     <h4 class="fg-white m-0 text-right">Refine</h4>
                     <div class="filter-item">
                         <select class="form-control" name="category[]" id="filter-category">
+                            <option selected="selected" value="">Category</option>
 <?php
     foreach($categories as $category):
-        $selected = ($_GET['category'][0] == $category->slug || (!isset($_GET['category']) && $category->slug == 'news-insights')) ? 'selected="selected"' : '';
+        $selected = ($_GET['category'][0] == $category->slug) ? 'selected="selected"' : '';
         echo '<option ' .$selected. ' value="' .$category->slug. '">' .$category->name. '</option>';
     endforeach;
 ?>
@@ -62,11 +64,12 @@ $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')
                     </div>
                     <div class="filter-item">
                         <select class="form-control" name="month[]" id="filter-category">
+                            <option selected="selected" value="">Date</option>
 <?php
     foreach($unique_months as $month):
         $month_value = date("Y-F", strtotime($month));
-        echo '<option ' .($month_value == $selected_month ? 'selected="selected"' : ''). 
-            ' value="' .$month_value. '">' .$month. '</option>';
+        $selected = ($_GET['month'][0] == $month_value) ? 'selected="selected"' : '';
+        echo '<option ' .$selected. ' value="' .$month_value. '">' .$month. '</option>';
     endforeach;
 ?>
                         </select>
@@ -77,26 +80,32 @@ $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')
 
         <div class="blog-roll entry-body">
 <?php
-$meta_query[] = array(
-    'taxonomy' => 'category',
-    'field' => 'slug',
-    'terms' => isset($_GET['category']) ? $_GET['category'] : 'news-insights'
-);
+$meta_query = [];
+if ($_GET['category'][0] != '') {
+    $meta_query[] = array(
+        'taxonomy' => 'category',
+        'field' => 'slug',
+        'terms' => $_GET['category']
+    );
+}
 
-$selected_month = $selected_month. '-01';
 $date_query = [];
-$date_query[] = array(
-    'column' => 'post_date',
-    'after' => date("Y-m-d", strtotime($selected_month)),
-    'before' => date("Y-m-t", strtotime($selected_month))
-);
+if ($selected_month[0] != '') {
+    $selected_month = $selected_month[0]. '-01';
+    $date_query[] = array(
+        'column' => 'post_date',
+        'after' => date("Y-m-d", strtotime($selected_month)),
+        'before' => date("Y-m-t", strtotime($selected_month))
+    );
+}
 
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args = array(
+    'post_type' => 'post',
     'orderby' => 'posted_date',
     'order' => 'DESC',
     'post_status' => 'publish',
-    'tax_query' => array($meta_query),
+    'tax_query' => $meta_query,
     'date_query' => $date_query,
     'paged' => $paged,
     'posts_per_page' => 9
